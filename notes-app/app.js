@@ -14,13 +14,13 @@ yargs.command({
             type: 'string'
         },
         body: {
-            describe: 'The note itself',
+            'describe': 'The note itself',
             type: 'string',
             demandOption: true
         }
     },
     handler: function(argv){
-        console.log(`Adding a new note!\nTitle:${argv.title},\nNote: ${argv.note}`)
+        console.log(`Adding a new note!\nTitle:${argv.title},\nNote: ${argv.body}`)
     }
 });
 
