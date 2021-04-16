@@ -7,6 +7,6 @@ Notes - APP
 
 **Main Modules**
 
-Yargs
+Yargs - Create and use interactive command line tools by parsing arguments.
 
 
