@@ -6,9 +6,16 @@ const fs = require('fs')
 // const bookJSON = JSON.stringify(book)
 // fs.writeFileSync('1-json.json',bookJSON)
 
-const dataBuffer = fs.readFileSync('1-json.json')
-const dataJSON = dataBuffer.toString()
-const data = JSON.parse(dataJSON)
+// const dataBuffer = fs.readFileSync('1-json.json')
+// const dataJSON = dataBuffer.toString()
+// const data = JSON.parse(dataJSON)
 
-console.log(data.title)
+// console.log(data.title)
+
+const dataBuffer = fs.readFileSync('1-json.json')
+const dataString = dataBuffer.toString()
+const dataJSON = JSON.parse(dataString)
+dataJSON.name = 'My Name'
+dataJSON.age = 34
+fs.writeFileSync('1-json.json',JSON.stringify(dataJSON))
 
