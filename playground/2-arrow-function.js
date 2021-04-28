@@ -1,14 +1,34 @@
-const square1 = function (x) {
-     return x * x
-}
+// Example 1
+/*
+const val = 2
+const outSquare = function(x){return x * val}
+const outSquareArrow = (x) => {return x * val}
+console.log(outSquare(3)) // 6
+console.log(outSquareArrow(3)) // 6
+*/
+/*
+// Example 2
+let user = {
+    firstName: "John",
+    sayHi() {
+      console.log(`Hello, ${this.firstName}!`);
+    }
+  };
+setTimeout(user.sayHi(), 1); // Hello, undefined!
+// Solution
+const f = user.sayHi.bind(user)
+setTimeout(f, 1); // Hello, John
+*/
 
-const square2 = (x) => {
-    return x * x
-}
 
+// Example 3
+/*
+const square1 = function (x) { return x * x }
+const square2 = (x) => { return x * x }
 const square3 = (x) => x * x 
+*/
 
-
+// Example 4
 const myEvent = {
     name: 'Birthday Party',
     guestList: ['Andrew', 'Mike', 'Jen'],
@@ -30,15 +50,8 @@ const myEvent = {
         })
     }
 }
-
 myEvent.printGuestList()
 myEvent.printGuestListArrow()
 myEvent.printGuestListNewArrow()
 
-
-const myObj =  {
-
-myFunc: function() {},
-myFunc2() {},
-myFunc3: () => {}
-}
+//*/
