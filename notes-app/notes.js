@@ -35,7 +35,15 @@ const removeNote = (title) => {
         console.log(chalk.green('Note with the title was removed'))
         saveNotes(noteToKeep)
     }
+}
 
+const readNote = (title) => {
+    const notes = loadNotes()
+    const note = notes.find((note) => note.title == title)
+    if(note)
+        console.log(chalk.inverse('title : ' + note.title + ', body : ' + note.body))
+    else
+        console.log(chalk.red('Note not found'))
 }
 
 const loadNotes = () => {
@@ -58,8 +66,8 @@ const listNotes = () => {
 }
 
 module.exports = {
-    getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 }
