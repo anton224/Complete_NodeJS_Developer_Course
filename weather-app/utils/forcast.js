@@ -1,21 +1,17 @@
-const { url } = require('node:inspector')
 const request = require('request')
 
-
 const forcast = (lat, lan, callback) => {
-
-    request({url: url, json: true}, (error, response) => {
+    const url = 'http://api.weatherstack.com/current?access_key=4930af6479899c8d2cd6b6a84a597a5d&query=' + lat + ',' + lan
+    request({url, json: true}, (error, {body}) => {
         if (error){
-            callback('Error message ' + error)
-        }else if(response.body.message){
-            callback('Error getting the data')
+            callback('Error message ' + error, undefined)
+        }else if(body.error){
+            callback('Error getting the data - ' +  JSON.stringify(body.error.info), undefined)
         }else{
-            callback(undefined, response.current.temperature)
+            // console.log(JSON.stringify(response))
+            callback(undefined, 'The temperature is : ' + body.current.temperature)
         }
     })
 }
 
-
-module.exports = {
-    forcast: forcast
-}
+module.exports = forcast

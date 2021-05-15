@@ -42,20 +42,6 @@ yargs.command({
     }
 });
 
-// yargs.command({
-//     command: "remove",
-//     describe: "Description",
-//     builder: {
-//         title: {
-//             describe: 'Note title',
-//             demandOption: true, // set required true
-//             type: 'string'
-//         }
-//     },
-//     handler: function(argv){
-//         console.log("Removing the note!", argv.title)
-//     }
-// });
 
 yargs.command({
     command: "list",
