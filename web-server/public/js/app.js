@@ -15,7 +15,7 @@ weather_form.addEventListener('submit', (event) => {
     const location = search.value 
     const url = base_url + location
     message_one.textContent = 'Loading Forcast...'
-    message_two.textContent = ''
+    message_two.textContent = '' 
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
