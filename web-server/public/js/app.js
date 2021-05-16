@@ -11,7 +11,7 @@ const message_two  = document.querySelector('#message-2')
 weather_form.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    const location = search.value
+    const location = search.value 
     const url = base_url + location
     message_one.textContent = 'Loading Forcast...'
     fetch(url)
