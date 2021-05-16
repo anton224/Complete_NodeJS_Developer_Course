@@ -1,5 +1,6 @@
 console.log('Client side js file is loaded')
-const base_url = 'http://api.weatherstack.com/current?access_key=4930af6479899c8d2cd6b6a84a597a5d&query='
+// const base_url = 'http://api.weatherstack.com/current?access_key=4930af6479899c8d2cd6b6a84a597a5d&query='
+const base_url = '/weather?address='
 
 const weather_form = document.querySelector('form')
 const search = document.querySelector('input')
@@ -14,18 +15,17 @@ weather_form.addEventListener('submit', (event) => {
     const location = search.value 
     const url = base_url + location
     message_one.textContent = 'Loading Forcast...'
+    message_two.textContent = ''
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
+        console.log(data)
         if(data.error){
-            message_one.textContent = data.error.info
-            message_two.textContent = ''
-            console.log(data.error.info);
+            message_one.textContent = data.error.info    
         }else {
-            console.log(data)
-            message_one.textContent = data.location.name
-            message_two.textContent = data.current.temperature
-            console.log(data.current.temperature)
+            console.log(data.location)
+            message_one.textContent = data.address
+            message_two.textContent = data.forecast
         }
     })
     console.log(location)
