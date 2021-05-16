@@ -22,3 +22,8 @@ Then, sends a request to Maps API for the langitude and longitude of the address
 Finally, access Weather API to receive temperature for the place.
 
 Run Command:  node app.js Boston
+
+Web-Server
+
+Express based web-server for integrating with weather API and getting weather stats.
+There was used a Heroku server for deployment.

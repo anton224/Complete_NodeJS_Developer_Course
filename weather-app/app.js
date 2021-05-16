@@ -19,8 +19,8 @@ geocode(location, (error, {lat, lon, location} = {}) => {
         if(error)
             return console.log('Error : ' + error)
 
-    console.log('Location : ' + location)
-    console.log(forecastData)
+        console.log('Location : ' + location)
+        console.log(forecastData)
     })
 })
 
